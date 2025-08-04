@@ -15,6 +15,9 @@ npx tsx src/server.ts
 Open a new terminal
 Go to image_process_app/client (frontend)
 ```setup
+cd client
+```
+```setup
 npm install
 ```
 
