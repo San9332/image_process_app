@@ -1,4 +1,4 @@
-# image_process_app
+# Image Gallery
 ```setup
 git clone https://github.com/San9332/image_process_app.git
 ```
