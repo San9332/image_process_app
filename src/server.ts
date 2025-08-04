@@ -19,7 +19,7 @@ const gcs = new Storage();
 const bucket = gcs.bucket('image_app_san');
 const prisma = new PrismaClient();  // <-- Initialize Prisma Client
 
-// 🧩 Middleware
+// Middleware
 app.register(fastifyCors, {
   origin: 'http://localhost:5173',
   credentials: true,
@@ -33,7 +33,7 @@ app.register(fastifyJwt, {
   cookie: { cookieName: 'token', signed: false },
 });
 
-// 📚 Swagger
+// Swagger
 app.register(fastifySwagger, {
   openapi: {
     info: {
@@ -51,7 +51,7 @@ app.register(fastifySwaggerUI, {
   },
 });
 
-// 🔐 Google OAuth
+// Google OAuth
 app.register(fastifyOAuth2, {
   name: 'googleOAuth2',
   credentials: {
@@ -71,7 +71,7 @@ app.register(fastifyOAuth2, {
   scope: ['openid', 'email', 'profile'],
 });
 
-// 🔄 WebSocket Setup (shared state)
+// WebSocket Setup (shared state)
 let io: SocketIOServer;
 const wsServer = createServer();
 
@@ -145,7 +145,7 @@ app.post('/upload', async (req, reply) => {
 });
 
 
-// 🖼️ List Images
+// List Images
 app.get('/images', async (_, reply) => {
   try {
     const images = await prisma.image.findMany({
@@ -191,13 +191,13 @@ app.delete('/delete', async (req, reply) => {
 });
 
 
-// 🚀 Start both HTTP and WebSocket
+// Start both HTTP and WebSocket
 const start = async () => {
   try {
     await app.ready();
 
     app.listen({ port: 3001 }, () => {
-      console.log('✅ Fastify HTTP server running at http://localhost:3001');
+      console.log('Fastify HTTP server running at http://localhost:3001');
     });
 
     io = new SocketIOServer(wsServer, {
@@ -208,15 +208,15 @@ const start = async () => {
     });
 
     io.on('connection', (socket) => {
-      console.log('📡 WebSocket client connected:', socket.id);
+      console.log('WebSocket client connected:', socket.id);
     });
 
     wsServer.listen(3002, () => {
-      console.log('🚀 WebSocket server running at http://localhost:3002');
+      console.log('WebSocket server running at http://localhost:3002');
     });
 
   } catch (err) {
-    console.error('❌ Error starting server:', err);
+    console.error('Error starting server:', err);
     process.exit(1);
   }
 };

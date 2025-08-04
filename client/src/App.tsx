@@ -191,7 +191,7 @@ function App() {
         </div>
       ) : (
         <div className="mb-6 text-center">
-          <p className="text-red-600 mb-4">❌ Invalid file uploaded. Upload section is disabled.</p>
+          <p className="text-red-600 mb-4"> Invalid file uploaded. Upload section is disabled.</p>
           <button
             onClick={() => {
               setUploadSectionVisible(true);
@@ -272,3 +272,5 @@ function App() {
 }
 
 export default App;
+
+//npm run dev
