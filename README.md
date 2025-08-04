@@ -8,7 +8,7 @@ Backend server
 cd image_process_app
 ```
 ```setup
-npm install
+npm install --legacy-peer-deps
 ```
 ```setup
 npx tsx src/server.ts
