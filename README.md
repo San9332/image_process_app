@@ -2,6 +2,7 @@
 ```setup
 git clone https://github.com/San9332/image_process_app.git
 ```
+Backend server
 ```setup
 cd image_process_app
 ```
