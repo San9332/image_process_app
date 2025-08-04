@@ -1,5 +1,7 @@
 # image_process_app
-git clone 
+```setup
+git clone https://github.com/San9332/image_process_app.git
+```
 ```setup
 cd image_process_app
 ```
