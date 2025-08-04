@@ -1,4 +1,5 @@
-# Image Gallery
+# Real-Time Gallery Upload App
+
 ```setup
 git clone https://github.com/San9332/image_process_app.git
 ```
